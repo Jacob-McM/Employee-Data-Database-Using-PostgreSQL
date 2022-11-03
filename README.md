@@ -7,15 +7,21 @@ In this repo you will find:
 | [Query Script](query_script.sql)  | A script containing several example queries one could make to pull information from the database. |
 
 ## Datafiles
-These are the datafiles imported to the database. Included are 6 .csv files.
-| CSV  | Description |
-| ------------- | ------------- |
-| [Department info](data/departments.csv) | A csv file containing the department name and its associated number. |
-| [Employee per Department](data/dept_emp.csv) | A csv file containing all employee numbers and the associated department number they work in.  |
-| [Manager per Department](data/dept_manager.csv) | A csv file containing all manager numbers and the associated department number they work in.  |
-| [Employee](data/employees.csv) | A csv file containing all employee numbers, their title, their birth date, their first name, last name, their sex, and their hire date. |
-| [Salaries](data/salaries.csv) | A csv file containing the salary information for each employee by employee number.  |
-| [Titles](data/titles.csv) | A csv file containing the availible titles for a given employee, based on their heiarchy in the company. eg. Staff/Senior Staff/Manager etc. |
+These are the datafiles imported to the database. Included are 6 .csv files. Their names 
+| CSV  | Description | Relative Table|
+| ------------- | ------------- | ----------|
+| [Department info](data/departments.csv) | A csv file containing the department name and its associated number. | tbl_department|
+| [Employee per Department](data/dept_emp.csv) | A csv file containing all employee numbers and the associated department number they work in.  | tbl_dept_employee|
+| [Manager per Department](data/dept_manager.csv) | A csv file containing all manager numbers and the associated department number they work in.  | tbl_dept_manager|
+| [Employee](data/employees.csv) | A csv file containing all employee numbers, their title, their birth date, their first name, last name, their sex, and their hire date. | tbl_dept_employees|
+| [Salaries](data/salaries.csv) | A csv file containing the salary information for each employee by employee number.  | tbl_salaries|
+| [Titles](data/titles.csv) | A csv file containing the availible titles for a given employee, based on their heiarchy in the company. eg. Staff/Senior Staff/Manager etc. | tbl_titles|
+
+## Entity Relationship Diagram (ERD)
+
+An ERD made using Quick Database Diagrams. Their file naming convention was left alone to preserve accountability.
+
+![ERD map](QuickDBD-export.png)
 
 ## Instructions for database replication
 If you would like to query this database of employee information follow these steps to set up the databse.
@@ -42,7 +48,9 @@ If you would like to query this database of employee information follow these st
 
 6. After everything has been imported, you may now run queries. Select the database and open a new query tool.
 7. From this query tool add [query_script.sql](query_script.sql) file.
-8. Select and run a script. They have been comment segregated with information pertaining to each script. Feel free to adjust values as you wish, such as searching for a different name, or looking at a different department. An example script run would look like:
+8. Select and run a script. They have been comment segregated with information pertaining to each script. Feel free to adjust values as you wish, such as searching for a different name, or looking at a different department. 
+
+### Sample Query
 
  This query can give you the employee information based on department. The information returned is: employee number, last name, first name, and department name.
 ```
@@ -54,3 +62,8 @@ WHERE a.dept_name = 'Sales'
 ```
 The last line, calling `WHERE`, after the equals `Sales` can be replaced with any of the options found in the departments table, such as Marketing, Finance, and so on.
 One can easily view this list by running the query `SELECT * tbl_department`.
+
+# Resources and References
+##### Mockaroo, LLC. (2021). Realistic Data Generator. https://www.mockaroo.com/
+##### © 2022 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+##### StackOverflow, referenced inline
