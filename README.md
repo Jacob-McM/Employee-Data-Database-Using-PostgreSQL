@@ -1,5 +1,5 @@
 # Database Creation Using PostgreSQL
-This repo is a demonstration in my ability to create a database in PostgreSQL and query various types of information from that database.
+This repo is a demonstration in my ability to create a database in PostgreSQL and query various types of information from that database. The database is created around employee information (salary, department, hire date, etc) for a given company. 
 In this repo you will find:
 |PostgreSQL scripts  | Description |
 | ------------- | ------------- |
